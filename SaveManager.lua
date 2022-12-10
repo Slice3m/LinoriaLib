@@ -185,8 +185,8 @@ local SaveManager = {} do
 				return self.Library:Notify('Failed to load autoload config: ' .. err)
 			end
 
-			
-		
+			self.Library
+		end
 	end
 
 
