@@ -225,7 +225,7 @@ local SaveManager = {} do
 				return self.Library:Notify('Failed to load config: ' .. err)
 			end
 
-			self.Library:Notify(string.format('Loaded config %q', name))
+			self.Library
 		end)
 
 		section:AddButton('Overwrite config', function()
