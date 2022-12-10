@@ -185,7 +185,7 @@ local SaveManager = {} do
 				return self.Library:Notify('Failed to load autoload config: ' .. err)
 			end
 
-			self.Library
+			self.Library:Notify(string.format('Auto loaded config %q', name))
 		end
 	end
 
@@ -225,7 +225,7 @@ local SaveManager = {} do
 				return self.Library:Notify('Failed to load config: ' .. err)
 			end
 
-			self.Library
+			self.Library:Notify(string.format('Loaded config %q', name))
 		end)
 
 		section:AddButton('Overwrite config', function()
@@ -243,7 +243,7 @@ local SaveManager = {} do
 			local name = Options.SaveManager_ConfigList.Value
 			writefile(self.Folder .. '/settings/autoload.txt', name)
 			SaveManager.AutoloadLabel:SetText('Current autoload config: ' .. name)
-			self.Library
+			self.Library:Notify(string.format('Set %q to auto load', name))
 		end)
 
 		section:AddButton('Refresh config list', function()
